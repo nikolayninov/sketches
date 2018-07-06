@@ -2,8 +2,8 @@ let r1 = Number(document.getElementById('r1').value);
 let r2 = Number(document.getElementById('r2').value);
 let m1 = Number(document.getElementById('m1').value);
 let m2 = Number(document.getElementById('m2').value);
-let a1 = Number(document.getElementById('m1').value) / 8 * Math.PI;
-let a2 = Number(document.getElementById('m1').value) / 8 * Math.PI;
+let a1 = 40/ Number(document.getElementById('m1').value) * Math.PI;
+let a2 = 40 / Number(document.getElementById('m1').value) * Math.PI;
 let a1_v = 0;
 let a2_v = 0;
 let a1_a = 0;
@@ -26,9 +26,8 @@ function reset() {
   a1_a = 0;
   a2_a = 0;
   g = 1;
-  px2 = -1;
-  py2 = -1;
   canvas.clear();
+  
 }
 
 function setup() {
