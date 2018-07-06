@@ -2,8 +2,8 @@ let r1 = Number(document.getElementById('r1').value);
 let r2 = Number(document.getElementById('r2').value);
 let m1 = Number(document.getElementById('m1').value);
 let m2 = Number(document.getElementById('m2').value);
-let a1 = Number(document.getElementById('m1').value)/8;
-let a2 = Number(document.getElementById('m1').value)/8;
+let a1 = Number(document.getElementById('m1').value) / 8 * Math.PI;
+let a2 = Number(document.getElementById('m1').value) / 8 * Math.PI;
 let a1_v = 0;
 let a2_v = 0;
 let a1_a = 0;
@@ -19,8 +19,8 @@ function reset() {
   r2 = Number(document.getElementById('r2').value);
   m1 = Number(document.getElementById('m1').value);
   m2 = Number(document.getElementById('m2').value);
-  a1 = Number(document.getElementById('a1').value)/8;
-  a2 = Number(document.getElementById('a2').value)/8;
+  a1 = Number(document.getElementById('a1').value) / 8 * Math.PI;
+  a2 = Number(document.getElementById('a2').value) / 8 * Math.PI;
   a1_v = 0;
   a2_v = 0;
   a1_a = 0;
@@ -30,6 +30,7 @@ function reset() {
   py2 = -1;
   canvas.clear();
 }
+
 function setup() {
   createCanvas(window.innerWidth, (window.innerHeight >= 1000 ? window.innerHeight : 1000));
   canvas = createGraphics(window.innerWidth, (window.innerHeight >= 1000 ? window.innerHeight : 1000));
