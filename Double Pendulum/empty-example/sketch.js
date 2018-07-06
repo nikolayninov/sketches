@@ -31,8 +31,8 @@ function reset() {
   canvas.clear();
 }
 function setup() {
-  createCanvas(window.innerWidth, window.innerHeight);
-  canvas = createGraphics(window.innerWidth, window.innerHeight);
+  createCanvas(window.innerWidth, (window.innerHeight >= 1000 ? window.innerHeight : 1000));
+  canvas = createGraphics(window.innerWidth, (window.innerHeight >= 1000 ? window.innerHeight : 1000));
 
   canvas.beginShape();
   canvas.background(255);
