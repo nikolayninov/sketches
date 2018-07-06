@@ -1,21 +1,35 @@
-let r1 = 200;
-let r2 = 200;
-let m1 = 20;
-let m2 = 20;
-let a1 = Math.PI / 1.5;
-let a2 = Math.PI / 2;
+let r1 = Number(document.getElementById('r1').value);
+let r2 = Number(document.getElementById('r2').value);
+let m1 = Number(document.getElementById('m1').value);
+let m2 = Number(document.getElementById('m2').value);
+let a1 = Number(document.getElementById('m1').value)/8;
+let a2 = Number(document.getElementById('m1').value)/8;
 let a1_v = 0;
 let a2_v = 0;
 let a1_a = 0;
 let a2_a = 0;
 let g = 1;
-
 let px2 = -1;
 let py2 = -1;
 
 let canvas;
 
-
+function reset() {
+  r1 = Number(document.getElementById('r1').value);
+  r2 = Number(document.getElementById('r2').value);
+  m1 = Number(document.getElementById('m1').value);
+  m2 = Number(document.getElementById('m2').value);
+  a1 = Number(document.getElementById('a1').value)/8;
+  a2 = Number(document.getElementById('a2').value)/8;
+  a1_v = 0;
+  a2_v = 0;
+  a1_a = 0;
+  a2_a = 0;
+  g = 1;
+  px2 = -1;
+  py2 = -1;
+  canvas.clear();
+}
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   canvas = createGraphics(window.innerWidth, window.innerHeight);
@@ -23,9 +37,10 @@ function setup() {
   canvas.beginShape();
   canvas.background(255);
   canvas.pixelDensity(1);
-  canvas.translate(width/2, r1 + r2);
+  canvas.translate(width / 2, height / 2);
   canvas.endShape();
 }
+
 
 function draw() {
   background(255);
@@ -41,7 +56,7 @@ function draw() {
   stroke(0);
   strokeWeight(2);
 
-  translate(width / 2, r1 + r2);
+  translate(width / 2, height / 2);
 
   let x1 = r1 * sin(a1);
   let y1 = r1 * cos(a1);
@@ -71,7 +86,7 @@ function draw() {
   canvas.stroke(0);
   canvas.fill(0);
   if (frameCount > 1) {
-    canvas.line(px2, py2, x2 , y2 );
+    canvas.line(px2, py2, x2, y2);
 
   }
   canvas.endShape();
