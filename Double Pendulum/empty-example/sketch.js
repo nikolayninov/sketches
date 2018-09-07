@@ -15,6 +15,7 @@ let py2 = -1;
 let canvas;
 
 function reset() {
+  canvas.clear();
   r1 = Number(document.getElementById('r1').value);
   r2 = Number(document.getElementById('r2').value);
   m1 = Number(document.getElementById('m1').value);
@@ -26,8 +27,7 @@ function reset() {
   a1_a = 0;
   a2_a = 0;
   g = 1;
-  canvas.clear();
-  
+
 }
 
 function setup() {
