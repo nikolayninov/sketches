@@ -3,6 +3,8 @@ function Runner(i, j) {
     this.j = j;
     this.walls = [true, true, true, true];
     this.visited = false;
+    this.visitedCount = 0;
+
     this.index = this.i + this.j * cols
 
     this.checkPossibleDirections = function() {
@@ -66,9 +68,15 @@ function Runner(i, j) {
         var y = this.j * w;
 
         if (this.visited) {
-            noStroke();
-            fill(107, 203, 255);
-            rect(x, y, w, w);
+            if (this.visitedCount < 5) {
+                noStroke();
+                fill(107, 203, 255, 51 * this.visitedCount);
+                rect(x, y, w, w);
+            } else {
+                noStroke();
+                fill(107, 203, 255, 255);
+                rect(x, y, w, w);
+            }
         }
     }
 

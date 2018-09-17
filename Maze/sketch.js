@@ -53,7 +53,7 @@ function step(up, right, down, left, from) {
 
 
 function setup() {
-    createCanvas(600, 600);
+    createCanvas(800, 800);
     cols = floor(width / w);
     rows = floor(height / w);
     //frameRate(5);
@@ -98,7 +98,7 @@ function draw() {
         }
     }
     if (counter == grid.length) {
-        frameRate(10)
+        frameRate(15)
 
         if (failed) {
             alert("YOU HIT A WALL!")
@@ -109,6 +109,7 @@ function draw() {
                 noLoop()
             }
             currRunner.visited = true;
+            currRunner.visitedCount++;
             currRunner.show()
             currRunner.highlight()
             let possibleDirs = currRunner.checkPossibleDirections();
