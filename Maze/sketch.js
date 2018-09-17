@@ -19,14 +19,37 @@ function startRunner() {
 }
 
 function step(up, right, down, left, from) {
-    // up,right,down,left --> Boolean
-    // from --> string equal to one of these - Up,Righ,Down,Left
+    let directions = ["Down", "Right", "Up", "Left"];
+    let possibleDirs = {
+        "Up": up,
+        "Right": right,
+        "Down": down,
+        "Left": left,
+    }
+    let countOfPossibilities = 0;
+    for (const poss in possibleDirs) {
+        if (possibleDirs[poss]) {
+            countOfPossibilities++;
+        }
+    }
+    if (countOfPossibilities > 1) {
 
-    // to move return one of the directions you want to go to
-    // Example: return "Left" (this will move the runner left)
-    // TODO:
+        possibleDirs[from] = false;
+    }
+    let r;
+    let index = directions.indexOf(from);
+    while (!possibleDirs[directions[index % 4]]) {
+        index++;
+        if (index > 10) {
+            noLoop()
+            break;
+        }
+    }
 
+    r = directions[index % 4]
+    return r;
 }
+
 
 
 function setup() {
