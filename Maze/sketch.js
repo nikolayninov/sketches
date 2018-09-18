@@ -15,7 +15,7 @@ function stopRunner() {
 }
 
 function startRunner() {
-    draw()
+    loop()
 }
 
 function step(up, right, down, left, from) {
@@ -43,6 +43,13 @@ function step(up, right, down, left, from) {
 
 function setup() {
     createCanvas(1600, 800);
+    resetSketch();
+}
+
+function resetSketch() {
+    runnerPath = [];
+    grid = [];
+    stack = [];
     cols = floor(width / w);
     rows = floor(height / w);
     //frameRate(5);

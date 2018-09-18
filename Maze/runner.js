@@ -70,7 +70,7 @@ function Runner(i, j) {
         if (this.visited) {
             if (this.visitedCount < 5) {
                 noStroke();
-                fill(107, 203, 255, 63.75 * this.visitedCount);
+                fill(107, 203, 255, 85 * this.visitedCount);
                 rect(x, y, w, w);
             } else {
                 noStroke();
