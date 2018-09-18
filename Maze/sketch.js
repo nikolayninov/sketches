@@ -29,10 +29,6 @@ function step(up, right, down, left, from) {
     let index = directions.indexOf(from) + 1;
     while (!possibleDirs[directions[index % 4]]) {
         index++;
-        if (index > 10) {
-            noLoop()
-            break;
-        }
     }
 
     r = directions[index % 4]
