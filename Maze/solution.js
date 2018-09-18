@@ -6,26 +6,9 @@ function step(up, right, down, left, from) {
         "Down": down,
         "Left": left,
     }
-    let countOfPossibilities = 0;
-    for (const poss in possibleDirs) {
-        if (possibleDirs[poss]) {
-            countOfPossibilities++;
-        }
-    }
-    if (countOfPossibilities > 1) {
-
-        possibleDirs[from] = false;
-    }
-    let r;
-    let index = directions.indexOf(from);
+    let index = directions.indexOf(from) + 1;
     while (!possibleDirs[directions[index % 4]]) {
         index++;
-        if (index > 10) {
-            noLoop()
-            break;
-        }
     }
-
-    r = directions[index % 4]
-    return r;
+    return directions[index % 4];
 }

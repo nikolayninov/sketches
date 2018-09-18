@@ -26,18 +26,7 @@ function step(up, right, down, left, from) {
         "Down": down,
         "Left": left,
     }
-    let countOfPossibilities = 0;
-    for (const poss in possibleDirs) {
-        if (possibleDirs[poss]) {
-            countOfPossibilities++;
-        }
-    }
-    if (countOfPossibilities > 1) {
-
-        possibleDirs[from] = false;
-    }
-    let r;
-    let index = directions.indexOf(from);
+    let index = directions.indexOf(from) + 1;
     while (!possibleDirs[directions[index % 4]]) {
         index++;
         if (index > 10) {
@@ -53,7 +42,7 @@ function step(up, right, down, left, from) {
 
 
 function setup() {
-    createCanvas(800, 800);
+    createCanvas(1600, 800);
     cols = floor(width / w);
     rows = floor(height / w);
     //frameRate(5);
