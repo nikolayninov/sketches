@@ -67,23 +67,25 @@ function resetSketch() {
 
     current = grid[0];
     currRunner = runnerPath[0];
+
+
 }
 
 function draw() {
     background(51);
 
-
     for (var i = 0; i < grid.length; i++) {
         grid[i].show();
-        if (grid[i].finish) {
-            fill(249, 229, 0)
-            noStroke()
-            rect(grid[i].i * w, grid[i].j * w, w, w);
-        }
+
     }
     for (var i = 0; i < grid.length; i++) {
         runnerPath[i].show();
     }
+    push()
+    fill(249, 229, 0)
+    noStroke()
+    rect(grid[grid.length - 1].i * w, grid[grid.length - 1].j * w, w, w);
+    pop()
     let counter = 0;
     for (const cl of grid) {
         if (cl.visited) {
