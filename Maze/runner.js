@@ -59,7 +59,7 @@ function Runner(i, j) {
         var x = this.i * w;
         var y = this.j * w;
         noStroke();
-        fill(221, 22, 0);
+        fill(0, 255, 165);
         rect(x, y, w, w);
     }
 

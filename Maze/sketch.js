@@ -72,9 +72,7 @@ function resetSketch() {
 function draw() {
     background(51);
 
-    for (var i = 0; i < grid.length; i++) {
-        runnerPath[i].show();
-    }
+
     for (var i = 0; i < grid.length; i++) {
         grid[i].show();
         if (grid[i].finish) {
@@ -83,6 +81,9 @@ function draw() {
             rect(grid[i].i * w, grid[i].j * w, w, w);
         }
     }
+    for (var i = 0; i < grid.length; i++) {
+        runnerPath[i].show();
+    }
     let counter = 0;
     for (const cl of grid) {
         if (cl.visited) {
@@ -90,7 +91,7 @@ function draw() {
         }
     }
     if (counter == grid.length) {
-        frameRate(15)
+        // frameRate(15)
 
         if (failed) {
             alert("YOU HIT A WALL!")
