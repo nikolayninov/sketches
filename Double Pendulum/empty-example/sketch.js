@@ -78,8 +78,8 @@ function draw() {
   a1 += a1_v;
   a2 += a2_v;
 
-  a1_v *= 0.999;
-  a2_v *= 0.999;
+  // a1_v *= 0.999;
+  // a2_v *= 0.999;
 
   canvas.beginShape();
   canvas.strokeWeight(1);
